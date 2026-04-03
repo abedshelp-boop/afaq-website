@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AFAQ — Utbildning utan gränser</title>
-  <meta name="description" content="AFAQ erbjuder kurser och utbildning som öppnar nya horisonter. Lär dig, väx och nå din fulla potential." />
+  <title>AFAQ — Utbildning som öppnar nya horisonter</title>
+  <meta name="description" content="AFAQ erbjuder kurser och utbildning som öppnar nya horisonter i Helsingborg. Lär dig, väx och nå din fulla potential." />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -13,22 +13,17 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="css/style.css" />
-
-  <!-- GSAP (CDN) -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-
-  <!-- Lenis (CDN) -->
-  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js" defer></script>
-
-  <!-- App JS (after GSAP/Lenis) -->
-  <script src="js/app.js" defer></script>
-
-  <style>
-    /* Register GSAP plugin inline so it's available before defer scripts run */
-  </style>
 </head>
 <body>
+
+  <!-- 1. Loader -->
+  <div id="loader" aria-hidden="true">
+    <img src="afaq_logo_v1.png" alt="AFAQ" class="loader-logo" />
+    <div class="loader-bar">
+      <div class="loader-bar-fill" id="loader-fill"></div>
+    </div>
+    <p class="loader-text">Laddar...</p>
+  </div>
 
   <!-- Page-flip overlay -->
   <div id="page-flip-overlay" aria-hidden="true"></div>
@@ -36,7 +31,7 @@
   <!-- Custom cursor -->
   <div id="cursor" aria-hidden="true">📖</div>
 
-  <!-- ── Navigation ── -->
+  <!-- 2. Fixed nav -->
   <nav id="nav" role="navigation" aria-label="Huvudnavigation">
     <a href="index.html" class="nav-logo-link">
       <img src="afaq_logo_v1.png" alt="AFAQ" class="nav-logo" />
@@ -56,7 +51,7 @@
     </button>
   </nav>
 
-  <!-- ── Mobile menu ── -->
+  <!-- 3. Mobile menu -->
   <div id="mobile-menu" aria-hidden="true" role="dialog" aria-label="Mobilmeny">
     <ul class="mobile-links" role="list">
       <li><a href="index.html">Hem</a></li>
@@ -73,113 +68,132 @@
     </div>
   </div>
 
-  <!-- ── Hero: Canvas frame animation ── -->
-  <section id="hero-section" aria-label="Hero-sektion">
-    <div id="canvas-wrap">
-      <!-- Loading state: shown until first frame is ready -->
-      <div id="canvas-loading" aria-hidden="true">
-        <img src="afaq_logo_v1.png" alt="AFAQ" class="canvas-loading-logo" />
-        <div class="canvas-loading-bar"></div>
-      </div>
+  <!-- 4. Canvas wrapper (fixed, covers viewport) -->
+  <div class="canvas-wrap">
+    <canvas id="canvas"></canvas>
+  </div>
 
-      <canvas id="hero-canvas" role="img" aria-label="AFAQ intro-animation"></canvas>
+  <!-- 5. Marquee -->
+  <div class="marquee-wrap" id="marquee-wrap">
+    <div class="marquee-track">
+      <span>KUNSKAP&nbsp;•&nbsp;FRAMTID&nbsp;•&nbsp;HORISONTER&nbsp;•&nbsp;</span>
+      <span>KUNSKAP&nbsp;•&nbsp;FRAMTID&nbsp;•&nbsp;HORISONTER&nbsp;•&nbsp;</span>
+      <span>KUNSKAP&nbsp;•&nbsp;FRAMTID&nbsp;•&nbsp;HORISONTER&nbsp;•&nbsp;</span>
+      <span>KUNSKAP&nbsp;•&nbsp;FRAMTID&nbsp;•&nbsp;HORISONTER&nbsp;•&nbsp;</span>
+    </div>
+  </div>
 
-      <div class="hero-overlay">
-        <h1 class="hero-tagline">UTBILDNING SOM ÖPPNAR<br>NYA HORISONTER</h1>
-        <p class="hero-sub">Kunskap utan gränser — välkommen till AFAQ</p>
-      </div>
+  <!-- 6. Scroll container -->
+  <div id="scroll-container">
 
-      <!-- Scroll hint -->
-      <div class="scroll-hint" aria-hidden="true">
+    <!-- Hero zone: 0–20% -->
+    <section class="scroll-section align-center" data-enter="0" data-leave="20" data-animation="fade">
+      <div class="scroll-hint" id="scroll-hint">
         <span class="scroll-hint-text">Scrolla för att utforska</span>
         <div class="scroll-hint-chevron">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
       </div>
-    </div>
-  </section>
+      <h1 class="hero-tagline">UTBILDNING SOM ÖPPNAR<br>NYA HORISONTER</h1>
+      <p class="hero-sub">Kunskap utan gränser — välkommen till آفاق</p>
+    </section>
 
-  <!-- ── Intro section ── -->
-  <section class="intro-section">
-    <p class="intro-eyebrow reveal">Vår mission</p>
-    <h2 class="intro-heading reveal reveal-delay-1">Vi tror på<br>kunskapens kraft</h2>
-    <p class="intro-body reveal reveal-delay-2">
-      AFAQ är en utbildningsplattform som sätter lärandet i centrum. Vi erbjuder
-      strukturerade kurser, personlig coachning och en gemenskap som driver dig framåt —
-      oavsett var du befinner dig i livet.
-    </p>
-  </section>
+    <!-- Mission: 20–35% -->
+    <section class="scroll-section align-left" data-enter="20" data-leave="35" data-animation="slide-right">
+      <p class="section-eyebrow">Vår mission</p>
+      <h2 class="section-heading">Vi tror på<br>kunskapens kraft</h2>
+      <p class="section-body">
+        آفاق är ett utbildningscenter i Helsingborg som sätter lärandet i centrum.
+        Vi erbjuder strukturerade kurser, personlig coachning och en gemenskap som
+        driver dig framåt — oavsett var du befinner dig i livet.
+      </p>
+    </section>
 
-  <div class="section-divider"></div>
-
-  <!-- ── Features ── -->
-  <section class="features-section">
-    <div class="features-grid">
-
-      <div class="feature-card reveal">
+    <!-- Features: 35–55% -->
+    <section class="scroll-section align-right" data-enter="35" data-leave="42" data-animation="slide-left">
+      <div class="feature-card">
         <span class="feature-icon">📚</span>
         <h3 class="feature-title">Strukturerade kurser</h3>
-        <p class="feature-text">
-          Noggrant utformade utbildningsprogram med tydliga mål, milstolpar och
-          praktiska övningar som ger verkliga resultat.
-        </p>
+        <p class="feature-text">Noggrant utformade utbildningsprogram med tydliga mål, milstolpar och praktiska övningar.</p>
       </div>
+    </section>
 
-      <div class="feature-card reveal reveal-delay-1">
+    <section class="scroll-section align-left" data-enter="42" data-leave="47" data-animation="slide-right">
+      <div class="feature-card">
         <span class="feature-icon">🎯</span>
         <h3 class="feature-title">Personlig coachning</h3>
-        <p class="feature-text">
-          Engagerade lärare som följer din resa och anpassar stödet efter dina
-          unika behov och mål.
-        </p>
+        <p class="feature-text">Engagerade lärare som följer din resa och anpassar stödet efter dina unika behov.</p>
       </div>
+    </section>
 
-      <div class="feature-card reveal reveal-delay-2">
+    <section class="scroll-section align-right" data-enter="47" data-leave="52" data-animation="slide-left">
+      <div class="feature-card">
         <span class="feature-icon">🌍</span>
-        <h3 class="feature-title">Global gemenskap</h3>
-        <p class="feature-text">
-          Knyt kontakter med studenter och yrkesverksamma från hela världen.
-          Lär dig av varandra och väx tillsammans.
-        </p>
+        <h3 class="feature-title">Gemenskap</h3>
+        <p class="feature-text">Knyt kontakter med studenter och yrkesverksamma. Lär dig av varandra och väx tillsammans.</p>
       </div>
+    </section>
 
-      <div class="feature-card reveal reveal-delay-3">
+    <section class="scroll-section align-left" data-enter="52" data-leave="57" data-animation="slide-right">
+      <div class="feature-card">
         <span class="feature-icon">⚡</span>
         <h3 class="feature-title">Flexibelt lärande</h3>
-        <p class="feature-text">
-          Studera i din egen takt, online eller på plats. Våra kurser är
-          designade för det moderna livet.
-        </p>
+        <p class="feature-text">Studera i din egen takt, online eller på plats. Kurser designade för det moderna livet.</p>
       </div>
+    </section>
 
-    </div>
-  </section>
+    <!-- Stats: 57–72% -->
+    <section class="scroll-section align-center" data-enter="57" data-leave="72" data-animation="fade">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-number" data-count="350">0</span>
+          <span class="stat-label">Studenter</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-count="15">0</span>
+          <span class="stat-label">Lärare</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-count="24">0</span>
+          <span class="stat-label">Kurser</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-count="97">0</span>
+          <span class="stat-suffix">%</span>
+          <span class="stat-label">Nöjdhet</span>
+        </div>
+      </div>
+    </section>
 
-  <div class="section-divider"></div>
+    <!-- CTA: 72–88% -->
+    <section class="scroll-section align-center" data-enter="72" data-leave="100" data-animation="fade" data-persist="true">
+      <p class="section-eyebrow">Börja din resa</p>
+      <h2 class="cta-heading">Redo att växa?</h2>
+      <p class="cta-sub">Utforska våra kurser och ta första steget mot din framtid.</p>
+      <div class="cta-buttons">
+        <a href="courses.html" class="btn-primary">Se kurser</a>
+        <a href="contact.html" class="btn-secondary">Kontakta oss</a>
+      </div>
+    </section>
 
-  <!-- ── CTA ── -->
-  <section class="cta-section">
-    <p class="intro-eyebrow reveal">Börja din resa</p>
-    <h2 class="cta-heading reveal reveal-delay-1">Redo att växa?</h2>
-    <p class="cta-sub reveal reveal-delay-2">Utforska våra kurser och ta första steget mot din framtid.</p>
-    <div class="reveal reveal-delay-3">
-      <a href="courses.html" class="btn-primary">Se kurser</a>
-      <a href="contact.html" class="btn-secondary">Kontakta oss</a>
-    </div>
-  </section>
+  </div>
 
-  <!-- ── Footer ── -->
+  <!-- 7. Footer -->
   <footer>
     <img src="afaq_logo_v1.png" alt="AFAQ" class="footer-logo" />
-    <p class="footer-copy">&copy; 2024 AFAQ. Alla rättigheter förbehållna.</p>
+    <p class="footer-copy">&copy; 2025 آفاق (AFAQ). Alla rättigheter förbehållna.</p>
     <ul class="footer-links">
       <li><a href="rules.html">Regler</a></li>
       <li><a href="prices.html">Priser</a></li>
       <li><a href="contact.html">Kontakt</a></li>
     </ul>
   </footer>
+
+  <!-- CDN Scripts (end of body, correct order) -->
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script src="js/app.js"></script>
 
 </body>
 </html>
