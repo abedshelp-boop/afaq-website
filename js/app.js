@@ -164,6 +164,8 @@ if (canvas) {
           resizeCanvas();
           initScrollTrigger();
         }
+        // Draw whenever any frame loads in case this is the current frame
+        drawFrame(currentFrame);
       };
       images.push(img);
     }

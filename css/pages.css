@@ -36,7 +36,7 @@
   font-size: clamp(3rem, 10vw, 7rem);
   letter-spacing: 0.06em;
   line-height: 1;
-  color: var(--white);
+  color: var(--text);
   max-width: 900px;
 }
 
@@ -83,7 +83,7 @@
   font-family: var(--font-display);
   font-size: clamp(2rem, 5vw, 3.5rem);
   letter-spacing: 0.06em;
-  color: var(--white);
+  color: var(--text);
   margin-bottom: 1.5rem;
 }
 
@@ -101,7 +101,7 @@
   font-family: var(--font-display);
   font-size: 1.8rem;
   letter-spacing: 0.06em;
-  color: var(--white);
+  color: var(--text);
   margin-bottom: 1rem;
 }
 
@@ -134,7 +134,7 @@
 
 .contact-detail-text strong {
   display: block;
-  color: var(--white);
+  color: var(--text);
   font-weight: 500;
   margin-bottom: 0.2rem;
 }
@@ -155,11 +155,11 @@
 .form-group input,
 .form-group textarea,
 .form-group select {
-  background: rgba(255,255,255,0.04);
+  background: #f8f8f8;
   border: 1px solid var(--border);
   border-radius: 2px;
   padding: 0.85rem 1rem;
-  color: var(--white);
+  color: var(--text);
   font-family: var(--font-body);
   font-size: 0.95rem;
   transition: border-color 0.2s ease, background 0.2s ease;
@@ -177,7 +177,7 @@
 
 .form-group textarea { min-height: 140px; resize: vertical; }
 
-.form-group select option { background: #111; color: var(--white); }
+.form-group select option { background: #ffffff; color: var(--text); }
 
 .form-submit {
   margin-top: 0.5rem;
@@ -255,7 +255,7 @@
   border: 1px solid var(--border);
   border-radius: 2px;
   overflow: hidden;
-  background: rgba(255,255,255,0.02);
+  background: #f8f8f8;
   transition: border-color 0.3s ease, transform 0.3s ease;
   cursor: none;
 }
@@ -288,7 +288,7 @@
   font-family: var(--font-display);
   font-size: 1.6rem;
   letter-spacing: 0.05em;
-  color: var(--white);
+  color: var(--text);
   margin-bottom: 0.5rem;
 }
 
@@ -328,7 +328,7 @@
 .course-meta-value {
   font-family: var(--font-body);
   font-size: 0.88rem;
-  color: var(--white);
+  color: var(--text);
   font-weight: 500;
 }
 
@@ -362,7 +362,7 @@
   font-family: var(--font-display);
   font-size: clamp(2rem, 4vw, 3rem);
   letter-spacing: 0.05em;
-  color: var(--white);
+  color: var(--text);
   margin-bottom: 1.2rem;
 }
 
@@ -385,7 +385,7 @@
   border-radius: 2px;
   padding: 1.8rem;
   text-align: center;
-  background: rgba(255,255,255,0.02);
+  background: #f8f8f8;
 }
 
 .stat-number {
@@ -417,7 +417,7 @@
   border-radius: 2px;
   padding: 2rem 1.5rem;
   text-align: center;
-  background: rgba(255,255,255,0.02);
+  background: #f8f8f8;
   transition: border-color 0.3s, background 0.3s;
 }
 
@@ -442,7 +442,7 @@
   font-family: var(--font-display);
   font-size: 1.3rem;
   letter-spacing: 0.06em;
-  color: var(--white);
+  color: var(--text);
   margin-bottom: 0.3rem;
 }
 
@@ -484,7 +484,7 @@
   border-radius: 999px;
   position: relative;
   cursor: none;
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid var(--border);
   transition: background 0.25s;
 }
 
@@ -512,7 +512,7 @@
   border: 1px solid var(--border);
   border-radius: 2px;
   padding: 2.5rem 2rem;
-  background: rgba(255,255,255,0.02);
+  background: #f8f8f8;
   position: relative;
   transition: border-color 0.3s, transform 0.3s;
 }
@@ -554,7 +554,7 @@
   font-family: var(--font-display);
   font-size: clamp(2.5rem, 5vw, 3.5rem);
   letter-spacing: 0.04em;
-  color: var(--white);
+  color: var(--text);
   line-height: 1;
   margin-bottom: 0.3rem;
 }
@@ -655,7 +655,7 @@
 
 .rules-nav a:hover,
 .rules-nav a.active {
-  color: var(--white);
+  color: var(--text);
   border-color: var(--green);
 }
 
@@ -667,7 +667,7 @@
   font-family: var(--font-display);
   font-size: clamp(1.8rem, 3vw, 2.5rem);
   letter-spacing: 0.06em;
-  color: var(--white);
+  color: var(--text);
   margin-bottom: 1.5rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid var(--border);
@@ -688,7 +688,7 @@
   font-family: var(--font-display);
   font-size: 1.1rem;
   letter-spacing: 0.05em;
-  color: var(--white);
+  color: var(--text);
   margin-bottom: 0.4rem;
 }
 
