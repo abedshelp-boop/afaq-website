@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontakt — AFAQ</title>
+  <meta name="description" content="Kontakta AFAQ — vi svarar snabbt på alla frågor om kurser, priser och utbildning." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js" defer></script>
+  <script src="js/pages.js" defer></script>
+</head>
+<body>
+
+  <div id="page-flip-overlay" aria-hidden="true"></div>
+  <div id="cursor" aria-hidden="true">📖</div>
+
+  <!-- Nav -->
+  <nav id="nav" role="navigation" aria-label="Huvudnavigation">
+    <a href="index.html" class="nav-logo-link">
+      <img src="afaq_logo_v1.png" alt="AFAQ" class="nav-logo" />
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html">Hem</a></li>
+      <li><a href="courses.html">Kurser</a></li>
+      <li><a href="work.html">Arbete</a></li>
+      <li><a href="prices.html">Priser</a></li>
+      <li><a href="rules.html">Regler</a></li>
+      <li><a href="contact.html" class="active">Kontakt</a></li>
+    </ul>
+    <button id="burger" aria-label="Öppna meny" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" aria-hidden="true" role="dialog">
+    <ul class="mobile-links" role="list">
+      <li><a href="index.html">Hem</a></li>
+      <li><a href="courses.html">Kurser</a></li>
+      <li><a href="work.html">Arbete</a></li>
+      <li><a href="prices.html">Priser</a></li>
+      <li><a href="rules.html">Regler</a></li>
+      <li><a href="contact.html">Kontakt</a></li>
+    </ul>
+    <div class="mobile-social">
+      <a href="#">Instagram</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">YouTube</a>
+    </div>
+  </div>
+
+  <!-- Page hero -->
+  <header class="page-hero">
+    <p class="page-hero-eyebrow reveal">Hör av dig</p>
+    <h1 class="page-hero-title reveal reveal-delay-1">Kontakta<br><span>oss</span></h1>
+    <p class="page-hero-sub reveal reveal-delay-2">Vi svarar inom 24 timmar. Inga frågor är för stora eller för små.</p>
+  </header>
+
+  <div class="section-divider"></div>
+
+  <!-- Contact content -->
+  <section class="page-section">
+    <div class="contact-grid">
+
+      <!-- Info column -->
+      <div class="contact-info reveal">
+        <h3>Låt oss prata</h3>
+        <p>
+          Har du frågor om våra kurser, priser eller hur vi kan hjälpa dig nå dina mål?
+          Fyll i formuläret så återkommer vi så snart som möjligt.
+        </p>
+
+        <div class="contact-detail">
+          <span class="contact-detail-icon">📧</span>
+          <div class="contact-detail-text">
+            <strong>E-post</strong>
+            info@afaq.se
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <span class="contact-detail-icon">📱</span>
+          <div class="contact-detail-text">
+            <strong>Telefon</strong>
+            +46 70 000 00 00
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <span class="contact-detail-icon">📍</span>
+          <div class="contact-detail-text">
+            <strong>Adress</strong>
+            Stockholm, Sverige
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <span class="contact-detail-icon">🕐</span>
+          <div class="contact-detail-text">
+            <strong>Svarstid</strong>
+            Mån–Fre, 09:00–17:00
+          </div>
+        </div>
+      </div>
+
+      <!-- Form column -->
+      <div class="reveal reveal-delay-1">
+        <form id="contact-form" class="contact-form" novalidate>
+          <!-- Web3Forms access key — replace with your own -->
+          <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY" />
+          <input type="hidden" name="subject" value="Ny kontaktförfrågan från AFAQ" />
+          <input type="hidden" name="from_name" value="AFAQ Kontaktformulär" />
+          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.2rem;">
+            <div class="form-group">
+              <label for="fname">Förnamn</label>
+              <input type="text" id="fname" name="Förnamn" placeholder="Anna" required />
+            </div>
+            <div class="form-group">
+              <label for="lname">Efternamn</label>
+              <input type="text" id="lname" name="Efternamn" placeholder="Lindqvist" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">E-postadress</label>
+            <input type="email" id="email" name="E-post" placeholder="anna@exempel.se" required />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Telefonnummer (valfritt)</label>
+            <input type="tel" id="phone" name="Telefon" placeholder="+46 70 000 00 00" />
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Ämne</label>
+            <select id="subject" name="Ämne" required>
+              <option value="" disabled selected>Välj ett ämne…</option>
+              <option value="kursfråga">Fråga om kurs</option>
+              <option value="priser">Priser &amp; paket</option>
+              <option value="samarbete">Samarbete</option>
+              <option value="teknisk">Teknisk support</option>
+              <option value="annat">Annat</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Meddelande</label>
+            <textarea id="message" name="Meddelande" placeholder="Berätta mer om vad du behöver hjälp med…" required></textarea>
+          </div>
+
+          <button type="submit" class="form-submit">Skicka meddelande →</button>
+        </form>
+
+        <!-- Success state -->
+        <div id="form-success" class="form-success">
+          <h3>📬 Tack!</h3>
+          <p>Vi har tagit emot ditt meddelande och återkommer inom 24 timmar.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Footer -->
+  <footer>
+    <img src="afaq_logo_v1.png" alt="AFAQ" class="footer-logo" />
+    <p class="footer-copy">&copy; 2024 AFAQ. Alla rättigheter förbehållna.</p>
+    <ul class="footer-links">
+      <li><a href="rules.html">Regler</a></li>
+      <li><a href="prices.html">Priser</a></li>
+      <li><a href="contact.html">Kontakt</a></li>
+    </ul>
+  </footer>
+
+</body>
+</html>

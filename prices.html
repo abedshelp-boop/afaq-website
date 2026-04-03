@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Priser — AFAQ</title>
+  <meta name="description" content="Flexibla prisplaner för alla behov. Välj det paket som passar dig bäst." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js" defer></script>
+  <script src="js/pages.js" defer></script>
+</head>
+<body>
+
+  <div id="page-flip-overlay" aria-hidden="true"></div>
+  <div id="cursor" aria-hidden="true">📖</div>
+
+  <nav id="nav" role="navigation" aria-label="Huvudnavigation">
+    <a href="index.html" class="nav-logo-link">
+      <img src="afaq_logo_v1.png" alt="AFAQ" class="nav-logo" />
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html">Hem</a></li>
+      <li><a href="courses.html">Kurser</a></li>
+      <li><a href="work.html">Arbete</a></li>
+      <li><a href="prices.html" class="active">Priser</a></li>
+      <li><a href="rules.html">Regler</a></li>
+      <li><a href="contact.html">Kontakt</a></li>
+    </ul>
+    <button id="burger" aria-label="Öppna meny" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div id="mobile-menu" aria-hidden="true" role="dialog">
+    <ul class="mobile-links" role="list">
+      <li><a href="index.html">Hem</a></li>
+      <li><a href="courses.html">Kurser</a></li>
+      <li><a href="work.html">Arbete</a></li>
+      <li><a href="prices.html">Priser</a></li>
+      <li><a href="rules.html">Regler</a></li>
+      <li><a href="contact.html">Kontakt</a></li>
+    </ul>
+    <div class="mobile-social">
+      <a href="#">Instagram</a><a href="#">LinkedIn</a><a href="#">YouTube</a>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <header class="page-hero">
+    <p class="page-hero-eyebrow reveal">Transparent prissättning</p>
+    <h1 class="page-hero-title reveal reveal-delay-1">Välj ditt<br><span>paket</span></h1>
+    <p class="page-hero-sub reveal reveal-delay-2">
+      Inga dolda avgifter. Välj det paket som passar dina mål och din budget.
+    </p>
+  </header>
+
+  <div class="section-divider"></div>
+
+  <section class="page-section">
+    <!-- Billing toggle -->
+    <div class="pricing-toggle" style="justify-content:center; margin-bottom:3rem;" class="reveal">
+      <span class="toggle-label" style="color:var(--green)">Månadsvis</span>
+      <div id="pricing-toggle" class="toggle-switch" role="switch" aria-checked="false" tabindex="0" aria-label="Byt till årsvis fakturering"></div>
+      <span class="toggle-label">Årsvis <span style="color:var(--green);font-size:0.75rem;">(spara 20%)</span></span>
+    </div>
+
+    <!-- Pricing cards -->
+    <div class="pricing-grid">
+
+      <!-- Grund -->
+      <div class="price-card reveal">
+        <p class="price-tier">Grund</p>
+        <div class="price-amount" data-monthly>
+          <sup>kr</sup>299
+        </div>
+        <div class="price-amount" data-yearly style="display:none">
+          <sup>kr</sup>239
+        </div>
+        <p class="price-period">per månad</p>
+        <ul class="price-features">
+          <li>Tillgång till 3 kurser</li>
+          <li>Studiematerial online</li>
+          <li>Grupplektioner (2×/vecka)</li>
+          <li>E-postsupport</li>
+          <li class="disabled">Privata sessioner</li>
+          <li class="disabled">Certifikat</li>
+          <li class="disabled">Prioriterad support</li>
+        </ul>
+        <a href="contact.html" class="price-cta">Kom igång</a>
+      </div>
+
+      <!-- Standard (featured) -->
+      <div class="price-card featured reveal reveal-delay-1">
+        <div class="price-popular">Populärast</div>
+        <p class="price-tier">Standard</p>
+        <div class="price-amount" data-monthly>
+          <sup>kr</sup>599
+        </div>
+        <div class="price-amount" data-yearly style="display:none">
+          <sup>kr</sup>479
+        </div>
+        <p class="price-period">per månad</p>
+        <ul class="price-features">
+          <li>Tillgång till alla kurser</li>
+          <li>Studiematerial online &amp; offline</li>
+          <li>Grupplektioner (obegränsat)</li>
+          <li>Chatt- &amp; e-postsupport</li>
+          <li>2 privata sessioner/månad</li>
+          <li>Kurscertifikat</li>
+          <li class="disabled">Prioriterad support</li>
+        </ul>
+        <a href="contact.html" class="price-cta">Kom igång</a>
+      </div>
+
+      <!-- Premium -->
+      <div class="price-card reveal reveal-delay-2">
+        <p class="price-tier">Premium</p>
+        <div class="price-amount" data-monthly>
+          <sup>kr</sup>999
+        </div>
+        <div class="price-amount" data-yearly style="display:none">
+          <sup>kr</sup>799
+        </div>
+        <p class="price-period">per månad</p>
+        <ul class="price-features">
+          <li>Tillgång till alla kurser</li>
+          <li>Allt digitalt &amp; fysiskt material</li>
+          <li>Grupplektioner (obegränsat)</li>
+          <li>Prioriterad 24/7-support</li>
+          <li>Obegränsade privata sessioner</li>
+          <li>Alla certifikat ingår</li>
+          <li>Personlig studieplan</li>
+        </ul>
+        <a href="contact.html" class="price-cta">Kom igång</a>
+      </div>
+
+    </div>
+
+    <!-- FAQ -->
+    <div style="margin-top:5rem;">
+      <div class="reveal">
+        <p class="section-label">Vanliga frågor</p>
+        <h2 class="section-title">Vad undrar du?</h2>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-top:2rem;">
+
+        <div class="feature-card reveal">
+          <h3 class="feature-title" style="font-size:1.2rem;">Kan jag byta paket?</h3>
+          <p class="feature-text">Ja, du kan uppgradera eller nedgradera när som helst. Ändringar träder i kraft nästa faktureringsperiod.</p>
+        </div>
+
+        <div class="feature-card reveal reveal-delay-1">
+          <h3 class="feature-title" style="font-size:1.2rem;">Finns det provperiod?</h3>
+          <p class="feature-text">Vi erbjuder en gratis introduktionslektion. Kontakta oss för att boka din plats.</p>
+        </div>
+
+        <div class="feature-card reveal">
+          <h3 class="feature-title" style="font-size:1.2rem;">Hur fungerar privata sessioner?</h3>
+          <p class="feature-text">Boka direkt med din lärare via vår kalender. Sessionerna är 60 minuter och kan hållas online eller på plats.</p>
+        </div>
+
+        <div class="feature-card reveal reveal-delay-1">
+          <h3 class="feature-title" style="font-size:1.2rem;">Finns grupprabatt?</h3>
+          <p class="feature-text">Ja! Organisationer och skolor som anmäler 5+ deltagare får 15% rabatt. Kontakta oss för offert.</p>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="cta-section">
+    <h2 class="cta-heading reveal">Osäker på vilket paket?</h2>
+    <p class="cta-sub reveal reveal-delay-1">Boka ett kostnadsfritt rådgivningssamtal med oss.</p>
+    <div class="reveal reveal-delay-2">
+      <a href="contact.html" class="btn-primary">Boka gratis samtal</a>
+    </div>
+  </section>
+
+  <footer>
+    <img src="afaq_logo_v1.png" alt="AFAQ" class="footer-logo" />
+    <p class="footer-copy">&copy; 2024 AFAQ. Alla rättigheter förbehållna.</p>
+    <ul class="footer-links">
+      <li><a href="rules.html">Regler</a></li>
+      <li><a href="prices.html">Priser</a></li>
+      <li><a href="contact.html">Kontakt</a></li>
+    </ul>
+  </footer>
+
+</body>
+</html>

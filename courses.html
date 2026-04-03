@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kurser — AFAQ</title>
+  <meta name="description" content="Utforska AFAQs kurser inom svenska, matematik, programmering och mycket mer." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js" defer></script>
+  <script src="js/pages.js" defer></script>
+</head>
+<body>
+
+  <div id="page-flip-overlay" aria-hidden="true"></div>
+  <div id="cursor" aria-hidden="true">📖</div>
+
+  <nav id="nav" role="navigation" aria-label="Huvudnavigation">
+    <a href="index.html" class="nav-logo-link">
+      <img src="afaq_logo_v1.png" alt="AFAQ" class="nav-logo" />
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html">Hem</a></li>
+      <li><a href="courses.html" class="active">Kurser</a></li>
+      <li><a href="work.html">Arbete</a></li>
+      <li><a href="prices.html">Priser</a></li>
+      <li><a href="rules.html">Regler</a></li>
+      <li><a href="contact.html">Kontakt</a></li>
+    </ul>
+    <button id="burger" aria-label="Öppna meny" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div id="mobile-menu" aria-hidden="true" role="dialog">
+    <ul class="mobile-links" role="list">
+      <li><a href="index.html">Hem</a></li>
+      <li><a href="courses.html">Kurser</a></li>
+      <li><a href="work.html">Arbete</a></li>
+      <li><a href="prices.html">Priser</a></li>
+      <li><a href="rules.html">Regler</a></li>
+      <li><a href="contact.html">Kontakt</a></li>
+    </ul>
+    <div class="mobile-social">
+      <a href="#">Instagram</a><a href="#">LinkedIn</a><a href="#">YouTube</a>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <header class="page-hero">
+    <p class="page-hero-eyebrow reveal">Vad vill du lära dig?</p>
+    <h1 class="page-hero-title reveal reveal-delay-1">Våra<br><span>kurser</span></h1>
+    <p class="page-hero-sub reveal reveal-delay-2">
+      Från grundläggande till avancerat — vi har kurser för alla nivåer och livssituationer.
+    </p>
+  </header>
+
+  <div class="section-divider"></div>
+
+  <section class="page-section wide">
+    <!-- Filter -->
+    <div class="courses-filter reveal">
+      <button class="filter-btn active" data-filter="alla">Alla kurser</button>
+      <button class="filter-btn" data-filter="sprak">Språk</button>
+      <button class="filter-btn" data-filter="matematik">Matematik</button>
+      <button class="filter-btn" data-filter="teknik">Teknik</button>
+      <button class="filter-btn" data-filter="samhalle">Samhälle</button>
+    </div>
+
+    <!-- Course grid -->
+    <div class="courses-grid">
+
+      <article class="course-card reveal" data-category="sprak">
+        <div class="course-card-top">
+          <span class="course-badge">Språk</span>
+          <h2 class="course-title">Svenska för nyanlända</h2>
+          <p class="course-desc">
+            Lär dig svenska från grunden i en trygg och stöttande miljö.
+            Kursen täcker vardagsspråk, grammatik och kulturell förståelse.
+          </p>
+        </div>
+        <div class="course-card-bottom">
+          <div class="course-meta">
+            <div class="course-meta-item">
+              <span class="course-meta-label">Nivå</span>
+              <span class="course-meta-value">Nybörjare</span>
+            </div>
+            <div class="course-meta-item">
+              <span class="course-meta-label">Längd</span>
+              <span class="course-meta-value">12 veckor</span>
+            </div>
+          </div>
+          <div class="course-arrow">→</div>
+        </div>
+      </article>
+
+      <article class="course-card reveal reveal-delay-1" data-category="matematik">
+        <div class="course-card-top">
+          <span class="course-badge">Matematik</span>
+          <h2 class="course-title">Grundläggande matematik</h2>
+          <p class="course-desc">
+            Bygg en solid grund i matematik med fokus på praktisk tillämpning.
+            Perfekt för dig som vill komplettera din utbildning.
+          </p>
+        </div>
+        <div class="course-card-bottom">
+          <div class="course-meta">
+            <div class="course-meta-item">
+              <span class="course-meta-label">Nivå</span>
+              <span class="course-meta-value">Grundnivå</span>
+            </div>
+            <div class="course-meta-item">
+              <span class="course-meta-label">Längd</span>
+              <span class="course-meta-value">8 veckor</span>
+            </div>
+          </div>
+          <div class="course-arrow">→</div>
+        </div>
+      </article>
+
+      <article class="course-card reveal reveal-delay-2" data-category="teknik">
+        <div class="course-card-top">
+          <span class="course-badge">Teknik</span>
+          <h2 class="course-title">Introduktion till programmering</h2>
+          <p class="course-desc">
+            Lär dig grunderna i Python och webbutveckling. Inga förkunskaper krävs —
+            vi tar dig från noll till din första applikation.
+          </p>
+        </div>
+        <div class="course-card-bottom">
+          <div class="course-meta">
+            <div class="course-meta-item">
+              <span class="course-meta-label">Nivå</span>
+              <span class="course-meta-value">Nybörjare</span>
+            </div>
+            <div class="course-meta-item">
+              <span class="course-meta-label">Längd</span>
+              <span class="course-meta-value">16 veckor</span>
+            </div>
+          </div>
+          <div class="course-arrow">→</div>
+        </div>
+      </article>
+
+      <article class="course-card reveal" data-category="samhalle">
+        <div class="course-card-top">
+          <span class="course-badge">Samhälle</span>
+          <h2 class="course-title">Samhällsorientering</h2>
+          <p class="course-desc">
+            Förstå det svenska samhället — demokrati, välfärd, arbetsmarknad och rättigheter.
+            En viktig kurs för alla som är nya i Sverige.
+          </p>
+        </div>
+        <div class="course-card-bottom">
+          <div class="course-meta">
+            <div class="course-meta-item">
+              <span class="course-meta-label">Nivå</span>
+              <span class="course-meta-value">Alla nivåer</span>
+            </div>
+            <div class="course-meta-item">
+              <span class="course-meta-label">Längd</span>
+              <span class="course-meta-value">6 veckor</span>
+            </div>
+          </div>
+          <div class="course-arrow">→</div>
+        </div>
+      </article>
+
+      <article class="course-card reveal reveal-delay-1" data-category="sprak">
+        <div class="course-card-top">
+          <span class="course-badge">Språk</span>
+          <h2 class="course-title">Engelska — kommunikation</h2>
+          <p class="course-desc">
+            Förbättra din engelska för arbete och vardagsliv. Fokus på talad
+            kommunikation, presentationer och professionell korrespondens.
+          </p>
+        </div>
+        <div class="course-card-bottom">
+          <div class="course-meta">
+            <div class="course-meta-item">
+              <span class="course-meta-label">Nivå</span>
+              <span class="course-meta-value">Medel</span>
+            </div>
+            <div class="course-meta-item">
+              <span class="course-meta-label">Längd</span>
+              <span class="course-meta-value">10 veckor</span>
+            </div>
+          </div>
+          <div class="course-arrow">→</div>
+        </div>
+      </article>
+
+      <article class="course-card reveal reveal-delay-2" data-category="teknik">
+        <div class="course-card-top">
+          <span class="course-badge">Teknik</span>
+          <h2 class="course-title">Digital kompetens</h2>
+          <p class="course-desc">
+            Lär dig använda digitala verktyg — e-post, sociala medier, digitala
+            myndighetsärenden och grundläggande datorkunskap.
+          </p>
+        </div>
+        <div class="course-card-bottom">
+          <div class="course-meta">
+            <div class="course-meta-item">
+              <span class="course-meta-label">Nivå</span>
+              <span class="course-meta-value">Nybörjare</span>
+            </div>
+            <div class="course-meta-item">
+              <span class="course-meta-label">Längd</span>
+              <span class="course-meta-value">4 veckor</span>
+            </div>
+          </div>
+          <div class="course-arrow">→</div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2 class="cta-heading reveal">Hittar du inte rätt kurs?</h2>
+    <p class="cta-sub reveal reveal-delay-1">Kontakta oss och vi hittar lösningen tillsammans.</p>
+    <div class="reveal reveal-delay-2">
+      <a href="contact.html" class="btn-primary">Kontakta oss</a>
+    </div>
+  </section>
+
+  <footer>
+    <img src="afaq_logo_v1.png" alt="AFAQ" class="footer-logo" />
+    <p class="footer-copy">&copy; 2024 AFAQ. Alla rättigheter förbehållna.</p>
+    <ul class="footer-links">
+      <li><a href="rules.html">Regler</a></li>
+      <li><a href="prices.html">Priser</a></li>
+      <li><a href="contact.html">Kontakt</a></li>
+    </ul>
+  </footer>
+
+</body>
+</html>

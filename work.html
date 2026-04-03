@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arbete — AFAQ</title>
+  <meta name="description" content="Lär känna teamet bakom AFAQ — vår historia, våra värderingar och de människor som driver utbildning framåt." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js" defer></script>
+  <script src="js/pages.js" defer></script>
+</head>
+<body>
+
+  <div id="page-flip-overlay" aria-hidden="true"></div>
+  <div id="cursor" aria-hidden="true">📖</div>
+
+  <nav id="nav" role="navigation" aria-label="Huvudnavigation">
+    <a href="index.html" class="nav-logo-link">
+      <img src="afaq_logo_v1.png" alt="AFAQ" class="nav-logo" />
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html">Hem</a></li>
+      <li><a href="courses.html">Kurser</a></li>
+      <li><a href="work.html" class="active">Arbete</a></li>
+      <li><a href="prices.html">Priser</a></li>
+      <li><a href="rules.html">Regler</a></li>
+      <li><a href="contact.html">Kontakt</a></li>
+    </ul>
+    <button id="burger" aria-label="Öppna meny" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div id="mobile-menu" aria-hidden="true" role="dialog">
+    <ul class="mobile-links" role="list">
+      <li><a href="index.html">Hem</a></li>
+      <li><a href="courses.html">Kurser</a></li>
+      <li><a href="work.html">Arbete</a></li>
+      <li><a href="prices.html">Priser</a></li>
+      <li><a href="rules.html">Regler</a></li>
+      <li><a href="contact.html">Kontakt</a></li>
+    </ul>
+    <div class="mobile-social">
+      <a href="#">Instagram</a><a href="#">LinkedIn</a><a href="#">YouTube</a>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <header class="page-hero">
+    <p class="page-hero-eyebrow reveal">Vilka är vi?</p>
+    <h1 class="page-hero-title reveal reveal-delay-1">Vår<br><span>berättelse</span></h1>
+    <p class="page-hero-sub reveal reveal-delay-2">
+      AFAQ grundades med en enkel övertygelse: utbildning är nyckeln till ett bättre liv.
+    </p>
+  </header>
+
+  <div class="section-divider"></div>
+
+  <!-- Work intro -->
+  <section class="page-section">
+    <div class="work-intro">
+      <div class="work-intro-text reveal">
+        <h2>Vi bygger broar genom kunskap</h2>
+        <p>
+          AFAQ — arabiska för "horisonter" — grundades för att göra kvalitativ utbildning
+          tillgänglig för alla, oavsett bakgrund, modersmål eller livssituation.
+        </p>
+        <p>
+          Vi tror på pedagogik som möter människan där hon är. Våra lärare är experter
+          inom sina ämnen men också skickliga på att skapa trygghet och motivation i klassrummet.
+        </p>
+        <p>
+          Idag hjälper vi hundratals studenter varje år att nå sina mål — på svenska,
+          på arabiska och på engelska.
+        </p>
+      </div>
+
+      <div class="work-stats reveal reveal-delay-1">
+        <div class="stat-box">
+          <span class="stat-number">500+</span>
+          <span class="stat-label">Studenter per år</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-number">12</span>
+          <span class="stat-label">Aktiva kurser</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-number">8</span>
+          <span class="stat-label">År av erfarenhet</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-number">96%</span>
+          <span class="stat-label">Nöjda studenter</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-divider" style="margin:3rem 0;"></div>
+
+    <!-- Values -->
+    <div class="reveal">
+      <p class="section-label">Våra värderingar</p>
+      <h2 class="section-title">Det vi tror på</h2>
+    </div>
+
+    <div class="features-grid" style="margin-top:2rem;">
+      <div class="feature-card reveal">
+        <span class="feature-icon">🤝</span>
+        <h3 class="feature-title">Inkludering</h3>
+        <p class="feature-text">
+          Varje människa förtjänar tillgång till utbildning. Vi välkomnar alla —
+          oavsett ålder, bakgrund eller förkunskaper.
+        </p>
+      </div>
+      <div class="feature-card reveal reveal-delay-1">
+        <span class="feature-icon">💡</span>
+        <h3 class="feature-title">Nyfikenhet</h3>
+        <p class="feature-text">
+          Vi uppmuntrar frågor, utforskning och kreativt tänkande. Lärande
+          ska vara en glädjefylld resa.
+        </p>
+      </div>
+      <div class="feature-card reveal reveal-delay-2">
+        <span class="feature-icon">🏆</span>
+        <h3 class="feature-title">Kvalitet</h3>
+        <p class="feature-text">
+          Våra kurser är noggrant utformade av erfarna pedagoger för att ge
+          verkliga resultat och bestående kunskap.
+        </p>
+      </div>
+    </div>
+
+    <div class="section-divider" style="margin:4rem 0 2rem;"></div>
+
+    <!-- Team -->
+    <div class="reveal">
+      <p class="section-label">Möt teamet</p>
+      <h2 class="section-title">Människorna bakom AFAQ</h2>
+    </div>
+
+    <div class="team-grid">
+      <div class="team-card reveal">
+        <div class="team-avatar">👨‍🏫</div>
+        <h3 class="team-name">Ahmad Al-Rashid</h3>
+        <p class="team-role">Grundare &amp; VD</p>
+        <p class="team-bio">Pedagog med 15 års erfarenhet och en passion för att göra utbildning tillgänglig för alla.</p>
+      </div>
+      <div class="team-card reveal reveal-delay-1">
+        <div class="team-avatar">👩‍💼</div>
+        <h3 class="team-name">Sara Lindström</h3>
+        <p class="team-role">Utbildningschef</p>
+        <p class="team-bio">Specialiserad på läroplansdesign och pedagogisk innovation med fokus på inkludering.</p>
+      </div>
+      <div class="team-card reveal reveal-delay-2">
+        <div class="team-avatar">👨‍💻</div>
+        <h3 class="team-name">Karim Hassan</h3>
+        <p class="team-role">Teknik &amp; digital</p>
+        <p class="team-bio">Ansvarar för vår digitala plattform och ser till att tekniken alltid stödjer lärandet.</p>
+      </div>
+      <div class="team-card reveal reveal-delay-3">
+        <div class="team-avatar">👩‍🎨</div>
+        <h3 class="team-name">Fatima Nouri</h3>
+        <p class="team-role">Kommunikation</p>
+        <p class="team-bio">Berättare och kommunikatör som förmedlar AFAQs budskap med hjärta och tydlighet.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="cta-section">
+    <h2 class="cta-heading reveal">Vill du jobba med oss?</h2>
+    <p class="cta-sub reveal reveal-delay-1">Vi söker alltid engagerade pedagoger och samarbetspartners.</p>
+    <div class="reveal reveal-delay-2">
+      <a href="contact.html" class="btn-primary">Kontakta oss</a>
+    </div>
+  </section>
+
+  <footer>
+    <img src="afaq_logo_v1.png" alt="AFAQ" class="footer-logo" />
+    <p class="footer-copy">&copy; 2024 AFAQ. Alla rättigheter förbehållna.</p>
+    <ul class="footer-links">
+      <li><a href="rules.html">Regler</a></li>
+      <li><a href="prices.html">Priser</a></li>
+      <li><a href="contact.html">Kontakt</a></li>
+    </ul>
+  </footer>
+
+</body>
+</html>

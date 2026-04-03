@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Regler — AFAQ</title>
+  <meta name="description" content="AFAQs riktlinjer, regler och viktig information för studenter." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js" defer></script>
+  <script src="js/pages.js" defer></script>
+</head>
+<body>
+
+  <div id="page-flip-overlay" aria-hidden="true"></div>
+  <div id="cursor" aria-hidden="true">📖</div>
+
+  <nav id="nav" role="navigation" aria-label="Huvudnavigation">
+    <a href="index.html" class="nav-logo-link">
+      <img src="afaq_logo_v1.png" alt="AFAQ" class="nav-logo" />
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html">Hem</a></li>
+      <li><a href="courses.html">Kurser</a></li>
+      <li><a href="work.html">Arbete</a></li>
+      <li><a href="prices.html">Priser</a></li>
+      <li><a href="rules.html" class="active">Regler</a></li>
+      <li><a href="contact.html">Kontakt</a></li>
+    </ul>
+    <button id="burger" aria-label="Öppna meny" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div id="mobile-menu" aria-hidden="true" role="dialog">
+    <ul class="mobile-links" role="list">
+      <li><a href="index.html">Hem</a></li>
+      <li><a href="courses.html">Kurser</a></li>
+      <li><a href="work.html">Arbete</a></li>
+      <li><a href="prices.html">Priser</a></li>
+      <li><a href="rules.html">Regler</a></li>
+      <li><a href="contact.html">Kontakt</a></li>
+    </ul>
+    <div class="mobile-social">
+      <a href="#">Instagram</a><a href="#">LinkedIn</a><a href="#">YouTube</a>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <header class="page-hero">
+    <p class="page-hero-eyebrow reveal">Riktlinjer &amp; information</p>
+    <h1 class="page-hero-title reveal reveal-delay-1">Regler<br>&amp; <span>villkor</span></h1>
+    <p class="page-hero-sub reveal reveal-delay-2">
+      Tydliga regler skapar en trygg och respektfull miljö för alla studenter och lärare.
+    </p>
+  </header>
+
+  <div class="section-divider"></div>
+
+  <!-- Rules content -->
+  <section class="page-section wide">
+    <div class="rules-layout">
+
+      <!-- Sidebar navigation -->
+      <aside class="rules-sidebar">
+        <nav aria-label="Innehållsförteckning">
+          <ul class="rules-nav">
+            <li><a href="#uppforande" class="active">Uppförande</a></li>
+            <li><a href="#narvaro">Närvaro</a></li>
+            <li><a href="#betalning">Betalning</a></li>
+            <li><a href="#avbokning">Avbokning</a></li>
+            <li><a href="#integritet">Integritet</a></li>
+            <li><a href="#teknik">Teknik &amp; utrustning</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Rules content -->
+      <div class="rules-content">
+
+        <!-- 1. Uppförande -->
+        <div class="rule-group reveal" id="uppforande">
+          <h2><span>01.</span> Uppförande</h2>
+
+          <div class="rule-item">
+            <h3>Respektera varandra</h3>
+            <p>
+              AFAQ är en plats för alla. Vi kräver att alla studenter, lärare och
+              personal behandlar varandra med respekt och värdighet, oavsett bakgrund,
+              nationalitet, religion eller åsikter.
+            </p>
+          </div>
+
+          <div class="rule-item">
+            <h3>Nolltolerans mot diskriminering</h3>
+            <p>
+              Diskriminering, trakasserier eller kränkande beteende av något slag
+              tolereras inte och kan leda till omedelbar avstängning utan återbetalning.
+            </p>
+          </div>
+
+          <div class="rule-item">
+            <h3>Konstruktivt klassrumsklimat</h3>
+            <p>
+              Frågor och diskussioner är välkomna. Vi ber alla studenter att bidra
+              positivt till gruppens lärande och undvika störande beteende under lektionstid.
+            </p>
+          </div>
+
+          <div class="rule-highlight">
+            <p>📌 Brott mot uppförandereglerna anmäls till vår studievägledare. Vid upprepade överträdelser kan studieplatsens avbrytas.</p>
+          </div>
+        </div>
+
+        <!-- 2. Närvaro -->
+        <div class="rule-group reveal" id="narvaro">
+          <h2><span>02.</span> Närvaro</h2>
+
+          <div class="rule-item">
+            <h3>Minsta närvaro</h3>
+            <p>
+              Vi rekommenderar minst 80% närvaro för bästa studieresultat. Studenter
+              med lägre närvaro kan inte garanteras kurscertifikat.
+            </p>
+          </div>
+
+          <div class="rule-item">
+            <h3>Frånvaroanmälan</h3>
+            <p>
+              Meddela din lärare senast 2 timmar innan lektionstillfället om du inte
+              kan närvara. Vid sjukdom accepteras retroaktiv anmälan.
+            </p>
+          </div>
+
+          <div class="rule-item">
+            <h3>Inspelade lektioner</h3>
+            <p>
+              Onlinelektioner spelas in och finns tillgängliga i 30 dagar för studenter
+              som missar ett tillfälle. Inspelningarna får ej delas vidare.
+            </p>
+          </div>
+        </div>
+
+        <!-- 3. Betalning -->
+        <div class="rule-group reveal" id="betalning">
+          <h2><span>03.</span> Betalning</h2>
+
+          <div class="rule-item">
+            <h3>Fakturering</h3>
+            <p>
+              Faktura skickas den 1:a varje månad och ska betalas inom 14 dagar.
+              Vid årsbetalning faktureras hela beloppet i förskott.
+            </p>
+          </div>
+
+          <div class="rule-item">
+            <h3>Dröjsmålsavgift</h3>
+            <p>
+              Vid utebliven betalning efter förfallodatum debiteras en dröjsmålsränta
+              på 8% per år i enlighet med räntelagen. Studieplats kan tillfälligt suspenderas.
+            </p>
+          </div>
+
+          <div class="rule-item">
+            <h3>Betalningssvårigheter</h3>
+            <p>
+              Kontakta oss omgående vid betalningssvårigheter. Vi erbjuder flexibla
+              lösningar och vill alltid hitta en väg framåt tillsammans.
+            </p>
+          </div>
+
+          <div class="rule-highlight">
+            <p>💚 Vi tror att ekonomi aldrig ska hindra lärande. Fråga oss om vårt stipendieprogram om du behöver stöd.</p>
+          </div>
+        </div>
+
+        <!-- 4. Avbokning -->
+        <div class="rule-group reveal" id="avbokning">
+          <h2><span>04.</span> Avbokning &amp; återbetalning</h2>
+
+          <div class="rule-item">
+            <h3>Avbokning av kurs</h3>
+            <p>
+              Avbokning av kursplats ska ske skriftligen via e-post till info@afaq.se.
+              Avbokning mer än 14 dagar före kursstart ger full återbetalning.
+            </p>
+          </div>
+
+          <div class="rule-item">
+            <h3>Återbetalningspolicy</h3>
+            <p>
+              7–14 dagar före kursstart: 50% återbetalning. Kortare än 7 dagar:
+              ingen återbetalning, men studieplats kan överlåtas till annan person.
+            </p>
+          </div>
+
+          <div class="rule-item">
+            <h3>Avbokning av privat session</h3>
+            <p>
+              Privata sessioner ska avbokas senast 24 timmar i förväg. Vid senare
+              avbokning debiteras halv sessionskostnad.
+            </p>
+          </div>
+
+          <div class="rule-item">
+            <h3>Inställda lektioner från AFAQ</h3>
+            <p>
+              Om vi ställer in en lektion erbjuds alltid ersättningstillfälle eller
+              full återbetalning för den aktuella sessionen.
+            </p>
+          </div>
+        </div>
+
+        <!-- 5. Integritet -->
+        <div class="rule-group reveal" id="integritet">
+          <h2><span>05.</span> Integritet &amp; dataskydd</h2>
+
+          <div class="rule-item">
+            <h3>GDPR-efterlevnad</h3>
+            <p>
+              Vi behandlar dina personuppgifter i enlighet med GDPR. Dina uppgifter
+              används enbart för att administrera din utbildning och kommunikation med AFAQ.
+            </p>
+          </div>
+
+          <div class="rule-item">
+            <h3>Fotografering och filminspelning</h3>
+            <p>
+              Fotografering eller inspelning av lektioner kräver skriftligt samtycke
+              från läraren och samtliga deltagare. Kontakta oss för medieanvändning.
+            </p>
+          </div>
+
+          <div class="rule-item">
+            <h3>Dina rättigheter</h3>
+            <p>
+              Du har rätt att begära ut, rätta eller radera dina personuppgifter.
+              Skicka din begäran till info@afaq.se.
+            </p>
+          </div>
+        </div>
+
+        <!-- 6. Teknik -->
+        <div class="rule-group reveal" id="teknik">
+          <h2><span>06.</span> Teknik &amp; utrustning</h2>
+
+          <div class="rule-item">
+            <h3>Teknikkrav för onlinekurser</h3>
+            <p>
+              Stabil internetanslutning, kamera och mikrofon krävs för onlinelektioner.
+              Använd gärna hörlurar för bästa ljudkvalitet och minimal störning.
+            </p>
+          </div>
+
+          <div class="rule-item">
+            <h3>Kursplattform</h3>
+            <p>
+              Vi använder Google Meet och vår egen studieportal. Inloggningsuppgifter
+              skickas via e-post efter anmälan. Dela aldrig dina uppgifter med andra.
+            </p>
+          </div>
+
+          <div class="rule-item">
+            <h3>Tekniska problem</h3>
+            <p>
+              Vid tekniska problem under lektion, kontakta läraren direkt via chatt.
+              Om problemet kvarstår i mer än 10 minuter erbjuds ersättningstillfälle.
+            </p>
+          </div>
+
+          <div class="rule-highlight">
+            <p>🔧 Vår tekniska support nås på support@afaq.se — vi svarar inom 4 timmar på vardagar.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="cta-section">
+    <h2 class="cta-heading reveal">Frågor om reglerna?</h2>
+    <p class="cta-sub reveal reveal-delay-1">Vi förklarar gärna mer. Hör av dig så hjälper vi dig.</p>
+    <div class="reveal reveal-delay-2">
+      <a href="contact.html" class="btn-primary">Kontakta oss</a>
+    </div>
+  </section>
+
+  <footer>
+    <img src="afaq_logo_v1.png" alt="AFAQ" class="footer-logo" />
+    <p class="footer-copy">&copy; 2024 AFAQ. Alla rättigheter förbehållna.</p>
+    <ul class="footer-links">
+      <li><a href="rules.html">Regler</a></li>
+      <li><a href="prices.html">Priser</a></li>
+      <li><a href="contact.html">Kontakt</a></li>
+    </ul>
+  </footer>
+
+</body>
+</html>
