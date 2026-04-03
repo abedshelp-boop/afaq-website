@@ -5,6 +5,15 @@
 
 'use strict';
 
+/* ── Clear stuck page-flip overlay on back-button ── */
+window.addEventListener('pageshow', () => {
+  const ov = document.getElementById('page-flip-overlay');
+  if (ov) {
+    ov.style.opacity = '0';
+    ov.style.clipPath = 'polygon(0 0, 0 0, 0 100%, 0 100%)';
+  }
+});
+
 /* ── 1. Lenis ── */
 const lenis = new Lenis({
   duration: 0.6,
