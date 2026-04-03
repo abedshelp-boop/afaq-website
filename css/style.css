@@ -249,6 +249,21 @@ img, canvas { display: block; }
   display: flex;
   align-items: center;
   justify-content: center;
+  background: #ffffff;
+  /* Inset border makes it clear this is a "screen", not blank space */
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.07), 0 2px 24px rgba(0,0,0,0.05);
+}
+
+/* Bottom edge accent so users can see where the canvas ends */
+#canvas-wrap::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(to right, transparent, var(--green), transparent);
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 5;
 }
 
 #hero-canvas {
@@ -256,6 +271,62 @@ img, canvas { display: block; }
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+/* ── Canvas loading state ── */
+#canvas-loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  z-index: 25;
+  background: #ffffff;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+}
+
+#canvas-loading.hidden {
+  opacity: 0;
+}
+
+.canvas-loading-logo {
+  height: 64px;
+  width: auto;
+  opacity: 0.6;
+  animation: logoPulse 1.4s ease-in-out infinite alternate;
+}
+
+@keyframes logoPulse {
+  from { opacity: 0.35; transform: scale(0.97); }
+  to   { opacity: 0.75; transform: scale(1.00); }
+}
+
+.canvas-loading-bar {
+  width: 140px;
+  height: 2px;
+  background: rgba(0,0,0,0.07);
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+
+.canvas-loading-bar::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -50%;
+  width: 50%;
+  height: 100%;
+  background: var(--green);
+  border-radius: 2px;
+  animation: loadingSlide 1.1s ease-in-out infinite;
+}
+
+@keyframes loadingSlide {
+  0%   { left: -50%; }
+  100% { left: 110%; }
 }
 
 /* Hero overlay text */
@@ -312,7 +383,7 @@ img, canvas { display: block; }
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.6rem;
   pointer-events: none;
   z-index: 20;
   opacity: 1;
@@ -321,24 +392,29 @@ img, canvas { display: block; }
 
 .scroll-hint.hidden { opacity: 0; }
 
-.scroll-hint-line {
-  width: 1px;
-  height: 40px;
-  background: linear-gradient(to bottom, var(--green), transparent);
-  animation: scrollPulse 1.5s ease-in-out infinite;
-}
-
 .scroll-hint-text {
   font-family: var(--font-body);
-  font-size: 0.7rem;
-  letter-spacing: 0.15em;
-  color: var(--gray);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  color: var(--text);
+  opacity: 0.55;
   text-transform: uppercase;
 }
 
-@keyframes scrollPulse {
-  0%, 100% { opacity: 0.4; transform: scaleY(0.8); }
-  50% { opacity: 1; transform: scaleY(1); }
+.scroll-hint-chevron {
+  color: var(--green);
+  animation: chevronBounce 1.6s ease-in-out infinite;
+  line-height: 1;
+}
+
+.scroll-hint-chevron svg {
+  display: block;
+  filter: drop-shadow(0 0 6px rgba(46,204,64,0.5));
+}
+
+@keyframes chevronBounce {
+  0%, 100% { transform: translateY(0);   opacity: 0.7; }
+  50%       { transform: translateY(6px); opacity: 1;   }
 }
 
 /* ── Intro section (after hero) ── */

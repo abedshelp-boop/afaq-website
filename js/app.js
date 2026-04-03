@@ -125,6 +125,7 @@ if (canvas) {
   const images = [];
   let loadedCount = 0;
   let currentFrame = 0;
+  const loadingEl = document.getElementById('canvas-loading');
 
   function padNum(n) {
     return String(n).padStart(4, '0');
@@ -161,17 +162,35 @@ if (canvas) {
       img.onload = () => {
         loadedCount++;
         if (loadedCount === 1) {
+          // First frame ready — show it and hide the loading overlay
           resizeCanvas();
+          if (loadingEl) {
+            loadingEl.classList.add('hidden');
+            // Remove from DOM after fade-out so it doesn't interfere
+            loadingEl.addEventListener('transitionend', () => {
+              loadingEl.style.display = 'none';
+            }, { once: true });
+          }
           initScrollTrigger();
         }
-        // Draw whenever any frame loads in case this is the current frame
-        drawFrame(currentFrame);
+        // Redraw if this is the currently displayed frame
+        if (i - 1 === currentFrame) {
+          drawFrame(currentFrame);
+        }
+      };
+      img.onerror = () => {
+        // Count errors too so we don't stall on missing frames
+        loadedCount++;
+        if (loadedCount === 1 && loadingEl) {
+          loadingEl.classList.add('hidden');
+        }
       };
       images.push(img);
     }
   }
 
   function initScrollTrigger() {
+    // canvas-wrap is already position:sticky — no GSAP pin needed (avoids DOM conflicts)
     gsap.to({ frame: 0 }, {
       frame: TOTAL_FRAMES - 1,
       snap: 'frame',
@@ -181,8 +200,6 @@ if (canvas) {
         start: 'top top',
         end: 'bottom bottom',
         scrub: 0.5,
-        pin: '#canvas-wrap',
-        anticipatePin: 1,
       },
       onUpdate() {
         const f = Math.round(this.targets()[0].frame);
@@ -216,8 +233,10 @@ if (canvas) {
     });
   }
 
+  // Set canvas dimensions immediately so the loading overlay sits on correct background
+  canvas.width  = window.innerWidth;
+  canvas.height = window.innerHeight;
   preload();
-  resizeCanvas();
 }
 
 /* ── 6. Nav scroll effect ── */

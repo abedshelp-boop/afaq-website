@@ -76,6 +76,12 @@
   <!-- ── Hero: Canvas frame animation ── -->
   <section id="hero-section" aria-label="Hero-sektion">
     <div id="canvas-wrap">
+      <!-- Loading state: shown until first frame is ready -->
+      <div id="canvas-loading" aria-hidden="true">
+        <img src="afaq_logo_v1.png" alt="AFAQ" class="canvas-loading-logo" />
+        <div class="canvas-loading-bar"></div>
+      </div>
+
       <canvas id="hero-canvas" role="img" aria-label="AFAQ intro-animation"></canvas>
 
       <div class="hero-overlay">
@@ -85,8 +91,12 @@
 
       <!-- Scroll hint -->
       <div class="scroll-hint" aria-hidden="true">
-        <span class="scroll-hint-text">Scrolla</span>
-        <div class="scroll-hint-line"></div>
+        <span class="scroll-hint-text">Scrolla för att utforska</span>
+        <div class="scroll-hint-chevron">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
       </div>
     </div>
   </section>
