@@ -34,7 +34,7 @@
   <!-- 2. Fixed nav -->
   <nav id="nav" role="navigation" aria-label="Huvudnavigation">
     <a href="index.html" class="nav-logo-link">
-      <img src="afaq_logo_v1.png" alt="AFAQ" class="nav-logo" />
+      <span class="nav-logo-text">AFAQ</span>
     </a>
 
     <ul class="nav-links" role="list">
@@ -68,14 +68,26 @@
     </div>
   </div>
 
-  <!-- 4. Canvas wrapper (fixed, covers viewport) -->
-  <div class="canvas-wrap">
+  <!-- 4. Standalone Hero (100vh, solid bg, normal flow) -->
+  <section class="hero-standalone" id="hero-standalone">
+    <div class="scroll-hint" id="scroll-hint">
+      <span class="scroll-hint-text">Scrolla för att utforska</span>
+      <div class="scroll-hint-chevron">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </div>
+    <h1 class="hero-tagline">UTBILDNING SOM ÖPPNAR<br>NYA HORISONTER</h1>
+    <p class="hero-sub">Kunskap utan gränser — välkommen till Afaq</p>
+  </section>
+
+  <!-- 5. Canvas wrapper (fixed, covers viewport) -->
+  <div class="canvas-wrap" id="canvas-wrap">
     <canvas id="canvas"></canvas>
   </div>
 
-  <!-- 5. Marquee -->
+  <!-- Marquee -->
   <div class="marquee-wrap" id="marquee-wrap">
-    <div class="marquee-track">
+    <div class="marquee-track" id="marquee-track">
       <span>KUNSKAP&nbsp;•&nbsp;FRAMTID&nbsp;•&nbsp;HORISONTER&nbsp;•&nbsp;</span>
       <span>KUNSKAP&nbsp;•&nbsp;FRAMTID&nbsp;•&nbsp;HORISONTER&nbsp;•&nbsp;</span>
       <span>KUNSKAP&nbsp;•&nbsp;FRAMTID&nbsp;•&nbsp;HORISONTER&nbsp;•&nbsp;</span>
@@ -83,96 +95,125 @@
     </div>
   </div>
 
-  <!-- 6. Scroll container -->
+  <!-- 8. Scroll container -->
   <div id="scroll-container">
 
-    <!-- Hero zone: 0–20% -->
-    <section class="scroll-section align-center" data-enter="0" data-leave="20" data-animation="fade">
-      <div class="scroll-hint" id="scroll-hint">
-        <span class="scroll-hint-text">Scrolla för att utforska</span>
-        <div class="scroll-hint-chevron">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-      </div>
-      <h1 class="hero-tagline">UTBILDNING SOM ÖPPNAR<br>NYA HORISONTER</h1>
-      <p class="hero-sub">Kunskap utan gränser — välkommen till آفاق</p>
-    </section>
-
-    <!-- Mission: 20–35% -->
-    <section class="scroll-section align-left" data-enter="20" data-leave="35" data-animation="slide-right">
-      <p class="section-eyebrow">Vår mission</p>
-      <h2 class="section-heading">Vi tror på<br>kunskapens kraft</h2>
-      <p class="section-body">
-        آفاق är ett utbildningscenter i Helsingborg som sätter lärandet i centrum.
-        Vi erbjuder strukturerade kurser, personlig coachning och en gemenskap som
-        driver dig framåt — oavsett var du befinner dig i livet.
-      </p>
-    </section>
-
-    <!-- Features: 35–55% -->
-    <section class="scroll-section align-right" data-enter="35" data-leave="42" data-animation="slide-left">
-      <div class="feature-card">
-        <span class="feature-icon">📚</span>
-        <h3 class="feature-title">Strukturerade kurser</h3>
-        <p class="feature-text">Noggrant utformade utbildningsprogram med tydliga mål, milstolpar och praktiska övningar.</p>
+    <!-- Mission: 12–26% -->
+    <section class="scroll-section align-left" data-enter="12" data-leave="26" data-animation="slide-right">
+      <div class="section-inner">
+        <span class="section-label">001 / Mission</span>
+        <h2 class="section-heading">Vi tror på<br>kunskapens kraft</h2>
+        <p class="section-body">
+          Afaq är ett utbildningscenter i Helsingborg som sätter lärandet i centrum.
+          Vi erbjuder strukturerade kurser, personlig coachning och en gemenskap som
+          driver dig framåt — oavsett var du befinner dig i livet.
+        </p>
       </div>
     </section>
 
-    <section class="scroll-section align-left" data-enter="42" data-leave="47" data-animation="slide-right">
-      <div class="feature-card">
-        <span class="feature-icon">🎯</span>
-        <h3 class="feature-title">Personlig coachning</h3>
-        <p class="feature-text">Engagerade lärare som följer din resa och anpassar stödet efter dina unika behov.</p>
-      </div>
-    </section>
-
-    <section class="scroll-section align-right" data-enter="47" data-leave="52" data-animation="slide-left">
-      <div class="feature-card">
-        <span class="feature-icon">🌍</span>
-        <h3 class="feature-title">Gemenskap</h3>
-        <p class="feature-text">Knyt kontakter med studenter och yrkesverksamma. Lär dig av varandra och väx tillsammans.</p>
-      </div>
-    </section>
-
-    <section class="scroll-section align-left" data-enter="52" data-leave="57" data-animation="slide-right">
-      <div class="feature-card">
-        <span class="feature-icon">⚡</span>
-        <h3 class="feature-title">Flexibelt lärande</h3>
-        <p class="feature-text">Studera i din egen takt, online eller på plats. Kurser designade för det moderna livet.</p>
-      </div>
-    </section>
-
-    <!-- Stats: 57–72% -->
-    <section class="scroll-section align-center" data-enter="57" data-leave="72" data-animation="fade">
-      <div class="stats-grid">
-        <div class="stat-item">
-          <span class="stat-number" data-count="350">0</span>
-          <span class="stat-label">Studenter</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number" data-count="15">0</span>
-          <span class="stat-label">Lärare</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number" data-count="24">0</span>
-          <span class="stat-label">Kurser</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number" data-count="97">0</span>
-          <span class="stat-suffix">%</span>
-          <span class="stat-label">Nöjdhet</span>
+    <!-- Feature 1: 22–32% -->
+    <section class="scroll-section align-right" data-enter="22" data-leave="32" data-animation="slide-left">
+      <div class="section-inner">
+        <div class="feature-card">
+          <span class="feature-icon">📚</span>
+          <h3 class="feature-title">Strukturerade kurser</h3>
+          <p class="feature-text">Noggrant utformade utbildningsprogram med tydliga mål, milstolpar och praktiska övningar.</p>
         </div>
       </div>
     </section>
 
-    <!-- CTA: 72–88% -->
-    <section class="scroll-section align-center" data-enter="72" data-leave="100" data-animation="fade" data-persist="true">
-      <p class="section-eyebrow">Börja din resa</p>
-      <h2 class="cta-heading">Redo att växa?</h2>
-      <p class="cta-sub">Utforska våra kurser och ta första steget mot din framtid.</p>
-      <div class="cta-buttons">
-        <a href="courses.html" class="btn-primary">Se kurser</a>
-        <a href="contact.html" class="btn-secondary">Kontakta oss</a>
+    <!-- Feature 2: 30–40% -->
+    <section class="scroll-section align-left" data-enter="30" data-leave="40" data-animation="fade-up">
+      <div class="section-inner">
+        <div class="feature-card">
+          <span class="feature-icon">🎯</span>
+          <h3 class="feature-title">Personlig coachning</h3>
+          <p class="feature-text">Engagerade lärare som följer din resa och anpassar stödet efter dina unika behov.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature 3: 38–48% -->
+    <section class="scroll-section align-right" data-enter="38" data-leave="48" data-animation="scale-up">
+      <div class="section-inner">
+        <div class="feature-card">
+          <span class="feature-icon">🌍</span>
+          <h3 class="feature-title">Gemenskap &amp; mentorskap</h3>
+          <p class="feature-text">Vi kopplar ihop dig med andra studenter och erfarna lärare så att ni kan lära av varandras erfarenheter och växa tillsammans.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature 4: 46–56% -->
+    <section class="scroll-section align-left" data-enter="46" data-leave="56" data-animation="rotate-in">
+      <div class="section-inner">
+        <div class="feature-card">
+          <span class="feature-icon">⚡</span>
+          <h3 class="feature-title">Flexibelt lärande</h3>
+          <p class="feature-text">Studera i din egen takt, online eller på plats. Kurser designade för det moderna livet.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature 5: 54–64% -->
+    <section class="scroll-section align-right" data-enter="54" data-leave="64" data-animation="clip-reveal">
+      <div class="section-inner">
+        <div class="feature-card">
+          <span class="feature-icon">🎮</span>
+          <h3 class="feature-title">Interaktiva spel som läxor</h3>
+          <p class="feature-text">Vi skapar AI-genererade interaktiva spel som läxor — ett roligt sätt att befästa det du lärt dig så att kunskapen verkligen fastnar.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats: 62–76% -->
+    <section class="scroll-section align-center" data-enter="62" data-leave="76" data-animation="stagger-up">
+      <div class="section-inner">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-value">
+              <span class="stat-number" data-count="50">0</span>
+            </div>
+            <span class="stat-label">Studenter</span>
+            <span class="stat-sublabel">(per period)</span>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">
+              <span class="stat-number" data-count="6">0</span>
+              <span class="stat-suffix">+</span>
+            </div>
+            <span class="stat-label">Lärare</span>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">
+              <span class="stat-number" data-count="10">0</span>
+              <span class="stat-suffix">+</span>
+            </div>
+            <span class="stat-label">Kurser</span>
+            <span class="stat-sublabel">(per period)</span>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">
+              <span class="stat-number" data-count="96">0</span>
+              <span class="stat-suffix">%</span>
+            </div>
+            <span class="stat-label">Nöjdhet</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA: 74–100% -->
+    <section class="scroll-section align-center" data-enter="74" data-leave="100" data-animation="fade-up" data-persist="true">
+      <div class="section-inner">
+        <span class="section-label">Börja din resa</span>
+        <h2 class="cta-heading">Redo att växa?</h2>
+        <p class="cta-sub">Utforska våra kurser och ta första steget mot din framtid.</p>
+        <div class="cta-buttons">
+          <a href="courses.html" class="btn-primary">Se kurser</a>
+          <a href="contact.html" class="btn-secondary">Kontakta oss</a>
+          <a href="#" class="btn-primary">Registrera dig</a>
+        </div>
       </div>
     </section>
 
@@ -180,8 +221,8 @@
 
   <!-- 7. Footer -->
   <footer>
-    <img src="afaq_logo_v1.png" alt="AFAQ" class="footer-logo" />
-    <p class="footer-copy">&copy; 2025 آفاق (AFAQ). Alla rättigheter förbehållna.</p>
+    <span class="footer-logo-text">AFAQ</span>
+    <p class="footer-copy">&copy; 2025 Afaq (AFAQ). Alla rättigheter förbehållna.</p>
     <ul class="footer-links">
       <li><a href="rules.html">Regler</a></li>
       <li><a href="prices.html">Priser</a></li>

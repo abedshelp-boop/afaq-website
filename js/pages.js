@@ -46,15 +46,7 @@ document.querySelectorAll('a, button, [onclick], input, textarea, select, .cours
 document.addEventListener('mousedown', () => cursor?.classList.add('click'));
 document.addEventListener('mouseup',   () => cursor?.classList.remove('click'));
 
-/* ── 3. Page-flip Sound ── */
-const flipAudio = new Audio('audio/page-flip.mp3');
-flipAudio.volume = 0.4;
-flipAudio.preload = 'auto';
-
 document.addEventListener('click', () => {
-  const s = flipAudio.cloneNode();
-  s.volume = 0.35;
-  s.play().catch(() => {});
   if (cursor) {
     cursor.textContent = '📗';
     setTimeout(() => { cursor.textContent = '📖'; }, 350);
@@ -203,4 +195,13 @@ if (ruleGroups.length && ruleNavLinks.length) {
     });
   }, { rootMargin: '-20% 0px -70% 0px' });
   ruleGroups.forEach(g => ruleObs.observe(g));
+
+  /* Smooth-scroll rules nav links via Lenis */
+  ruleNavLinks.forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) lenis.scrollTo(target, { offset: -100 });
+    });
+  });
 }
