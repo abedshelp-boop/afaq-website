@@ -767,3 +767,23 @@
   .team-grid { grid-template-columns: 1fr; }
   .work-stats { grid-template-columns: 1fr 1fr; }
 }
+
+/* ── Text-based logos ── */
+.nav-logo-text {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.6rem;
+  letter-spacing: 0.18em;
+  color: #0a0a0a;
+  opacity: 0.9;
+  transition: opacity 0.2s;
+}
+
+.nav-logo-link:hover .nav-logo-text { opacity: 1; }
+
+.footer-logo-text {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.3rem;
+  letter-spacing: 0.15em;
+  color: #0a0a0a;
+  opacity: 0.5;
+}
