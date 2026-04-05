@@ -24,12 +24,21 @@ const lenis = new Lenis({
   easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
   smoothWheel: true,
   wheelMultiplier: 1.8,
-  touchMultiplier: 2
+  touchMultiplier: 2,
+  autoRaf: false
 });
 
 lenis.on('scroll', ScrollTrigger.update);
 gsap.ticker.add((time) => lenis.raf(time * 1000));
 gsap.ticker.lagSmoothing(0);
+
+/* Force page focus so wheel events register without needing a click */
+document.documentElement.setAttribute('tabindex', '-1');
+document.documentElement.focus({ preventScroll: true });
+window.addEventListener('wheel', () => {
+  document.documentElement.focus({ preventScroll: true });
+  lenis.start();
+}, { once: true, passive: true });
 
 /* ── 2. Canvas Frame Animation ── */
 const TOTAL_FRAMES = 121;
@@ -426,6 +435,10 @@ async function preload() {
 
   // Position all sections immediately
   updateSections(0);
+
+  // Re-focus page and refresh ScrollTrigger after init
+  document.documentElement.focus({ preventScroll: true });
+  ScrollTrigger.refresh();
 
   // Phase 2: load remaining frames in background
   for (let i = 10; i < TOTAL_FRAMES; i++) {
